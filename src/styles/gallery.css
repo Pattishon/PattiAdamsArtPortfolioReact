@@ -1,0 +1,21 @@
+.gallery_item {
+  filter: grayscale(100%);
+  transition: 0.5s;
+  cursor: pointer;
+}
+.gallery_item:hover {
+  filter: grayscale(0);
+  transform: scale(1.1);
+}
+
+.animate {
+  animation: gallery 1s;
+}
+@keyframes gallery {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
