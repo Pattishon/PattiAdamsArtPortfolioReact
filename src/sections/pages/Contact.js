@@ -16,7 +16,6 @@ class Contact extends Component {
 
         <form
           id="form"
-          action="mailto: pada1989@wp.pl"
           method="post"
           className="mx-auto max-w-md"
           name="contact"
