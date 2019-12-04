@@ -65,7 +65,7 @@ export default class GalleryPortraits extends Component {
   render() {
     return (
       <div className="text-center">
-        <h1 className="font-normal uppercase p-4">Fanart</h1>
+        <h2 className="font-normal uppercase text-3xl p-4">Portraits</h2>
 
         <GalleryComponent images={images} />
       </div>

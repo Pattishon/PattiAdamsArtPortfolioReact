@@ -53,9 +53,7 @@ export default class Navigation extends Component {
 
     return (
       <div className="m-auto w-screen z-20">
-        {
-          //menu for small screens
-        }
+        {/* menu for small screens */}
         <div
           className={`w-screen h-full fixed top-0 left-0 z-50 bg-main sm:hidden ${!showMenu &&
             "hidden"}`}
@@ -86,9 +84,8 @@ export default class Navigation extends Component {
             </Icon>
           </Button>
         </div>
-        {
-          //navigation for larger screens
-        }
+
+        {/* navigation for larger screens */}
         <nav id="navigation" className="hidden sm:block pt-2 ">
           <ul className="flex justify-center bg-main" id="nav-main">
             {pages.map(page => (

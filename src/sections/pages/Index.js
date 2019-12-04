@@ -47,7 +47,7 @@ export default function Index() {
       >
         {images.map(image => {
           return (
-            <Carousel.Item>
+            <Carousel.Item key={image.title}>
               <img
                 className="d-block w-full h-64 sm:h-screen object-cover"
                 src={image.src}

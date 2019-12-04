@@ -8,7 +8,7 @@
   @apply text-dark no-underline;
 }
 .input {
-  @apply w-full text-text bg-dark border p-2 mb-4 transition;
+  @apply w-full text-text bg-dark border p-2 mb-4;
 }
 .input:focus {
   @apply bg-main;

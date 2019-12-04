@@ -1,13 +1,10 @@
 import React from "react";
-import "./App.css";
+import { BrowserRouter as Router } from "react-router-dom";
 import Header from "./sections/Header";
 import Navigation from "./navigation/Navigation";
 import Main from "./sections/Main";
 import Footer from "./sections/Footer";
-import "bootstrap/dist/css/bootstrap.min.css";
 import "./styles/index.css";
-
-import { BrowserRouter as Router } from "react-router-dom";
 
 function App() {
   return (
@@ -16,13 +13,10 @@ function App() {
         <Header />
 
         <hr className="line m-auto w-full sm:w-10/12" />
-
         <Navigation />
-
-        <hr className="line m-auto w-full sm:w-10/12" />
+        <hr className="line m-auto sm:mt-3 w-full sm:w-10/12" />
 
         <Main />
-
         <Footer />
       </div>
     </Router>
