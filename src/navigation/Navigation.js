@@ -47,7 +47,7 @@ const Navigation = () => {
     <div className="m-auto w-screen z-20">
       {/* menu for small screens */}
       <div
-        className={`w-screen h-full fixed top-0 left-0 z-50 bg-main sm:hidden ${!showMenu &&
+        className={`w-screen h-full fixed top-0 left-0 bg-main sm:hidden navigation ${!showMenu &&
           "hidden"}`}
       >
         <div className="flex justify-end p-4">

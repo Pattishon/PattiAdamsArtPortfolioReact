@@ -63,12 +63,16 @@ const GalleryComponent = ({ images }) => {
         {images.map(image => {
           return (
             <div key={image.src} className="gallery_item m-2 lg:m-6">
-              <img
-                src={image.thumbnail}
-                alt={image.title}
-                onClick={e => openLightbox(image.number)}
-                className="object-cover w-full h-64"
-              />
+              <picture>
+                <source srcset={image.thumbnailWebp} type="image/webp" />
+                <source srcset={image.thumbnail} type="image/jpg" />
+                <img
+                  src={image.thumbnail}
+                  alt={image.title}
+                  onClick={e => openLightbox(image.number)}
+                  className="object-cover w-full h-64"
+                />
+              </picture>
             </div>
           );
         })}
@@ -125,13 +129,18 @@ const GalleryComponent = ({ images }) => {
               </React.Fragment>
             )}
 
-            <img
-              src={images[slideNum - 1].src}
-              alt={images[slideNum - 1].title}
-              className="my-5 mx-auto h-screen  rounded-lg animate object-cover w-9/12 sm:w-auto"
-              style={{ border: "4px solid white" }}
-              id="test"
-            />
+            <picture>
+              <source srcset={images[slideNum - 1].srcWebp} type="image/webp" />
+              <source srcset={images[slideNum - 1].src} type="image/jpg" />
+              <img
+                src={images[slideNum - 1].src}
+                alt={images[slideNum - 1].title}
+                className="my-5 mx-auto h-screen  rounded-lg animate object-cover w-9/12 sm:w-auto"
+                style={{ border: "4px solid white" }}
+                id="test"
+              />
+            </picture>
+
             <p className=" mb-0">{images[slideNum - 1].title}</p>
             <p className="font-light italic ">
               {images[slideNum - 1].description}

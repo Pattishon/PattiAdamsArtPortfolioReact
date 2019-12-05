@@ -1,5 +1,6 @@
 import React from "react";
 import portrait from "../../img/portrait.jpg";
+import portraitWebp from "../../img/portrait.webp";
 
 const Bio = () => (
   <section className="flex flex-col content-center text-center">
@@ -7,12 +8,17 @@ const Bio = () => (
       About <em>Patti Adams</em>
     </h2>
     <article className="flex flex-col sm:flex-row justify-center">
-      <img
-        src={portrait}
-        alt="Patti Adams portrait"
-        id="avatar"
-        className="w-full h-64 object-cover sm:m-4 sm:h-auto sm:max-w-xs"
-      />
+      <picture>
+        <source srcset={portraitWebp} type="image/webp" />
+        <source srcset={portrait} type="image.jpg" />
+        <img
+          src={portrait}
+          alt="Patti Adams portrait"
+          id="avatar"
+          className="w-full h-64 object-cover sm:m-4 sm:h-auto sm:max-w-xs"
+        />
+      </picture>
+
       <div className="font-light p-4 sm:max-w-md my-auto">
         <p>Art is present in everything</p>
         <p>
