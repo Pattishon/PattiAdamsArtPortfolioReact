@@ -1,17 +1,18 @@
-import React, { Component } from "react";
+import React from "react";
 import { NavLink } from "react-router-dom";
+
 //component Submenu calls for NavItemsm but adds additionall classes - text is smaller
 //props.close - is needed to close the menu after menu option is clicked
-const Submenu = props => {
+const Submenu = ({ close, subpages }) => {
   return (
     <React.Fragment>
       <ul>
-        {props.subpages.map(subpage => (
+        {subpages.map(subpage => (
           <NavItemsm
             key={subpage.name}
             page={subpage}
             subpageClass={true}
-            close={props.close}
+            close={close}
           />
         ))}
       </ul>
@@ -19,27 +20,25 @@ const Submenu = props => {
   );
 };
 
-class NavItemsm extends Component {
-  closeMenu = () => {
-    this.props.close();
+const NavItemsm = ({ page, subpageClass, close }) => {
+  const closeMenu = () => {
+    close();
   };
-  render() {
-    const { page, subpageClass, close } = this.props;
-    return (
-      <li className="text-center">
-        <NavLink
-          to={page.path}
-          exact={true}
-          className={`link-tailwind link ${subpageClass && `text-lg`}`}
-          onClick={this.closeMenu}
-        >
-          {page.display}
-        </NavLink>
 
-        {page.subpages && <Submenu subpages={page.subpages} close={close} />}
-      </li>
-    );
-  }
-}
+  return (
+    <li className="text-center">
+      <NavLink
+        to={page.path}
+        exact={true}
+        className={`link-tailwind link ${subpageClass && `text-lg`}`}
+        onClick={closeMenu}
+      >
+        {page.display}
+      </NavLink>
+
+      {page.subpages && <Submenu subpages={page.subpages} close={close} />}
+    </li>
+  );
+};
 
 export default NavItemsm;

@@ -1,6 +1,5 @@
-import React, { Component } from "react";
+import React from "react";
 import GalleryComponent from "./../../components/GalleryComponent";
-
 //images
 import linkThumb from "../../img/portfolio/thumbnails/Patti Adams - link.thumb.jpg";
 import link from "../../img/portfolio/Patti Adams - link.jpg";
@@ -61,14 +60,12 @@ const images = [
   }
 ];
 
-export default class GalleryFanart extends Component {
-  render() {
-    return (
-      <div className="text-center">
-        <h1 className="font-normal uppercase p-4">Fanart</h1>
+const GalleryFanart = () => (
+  <article className="text-center">
+    <h1 className="font-normal uppercase text-3xl p-4">Fanart</h1>
 
-        <GalleryComponent images={images} />
-      </div>
-    );
-  }
-}
+    <GalleryComponent images={images} />
+  </article>
+);
+
+export default GalleryFanart;

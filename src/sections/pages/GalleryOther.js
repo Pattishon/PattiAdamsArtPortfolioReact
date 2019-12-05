@@ -1,6 +1,5 @@
-import React, { Component } from "react";
+import React from "react";
 import GalleryComponent from "./../../components/GalleryComponent";
-
 //images
 import goghThumb from "../../img/portfolio/thumbnails/Patti Adams - van gogh.thumb.jpg";
 import gogh from "../../img/portfolio/Patti Adams - van gogh.jpeg";
@@ -61,14 +60,12 @@ const images = [
   }
 ];
 
-export default class GalleryOther extends Component {
-  render() {
-    return (
-      <div className="text-center">
-        <h1 className="font-normal uppercase p-4">Other</h1>
+const GalleryOther = () => (
+  <article className="text-center">
+    <h2 className="font-normal uppercase text-3xl p-4">Other</h2>
 
-        <GalleryComponent images={images} />
-      </div>
-    );
-  }
-}
+    <GalleryComponent images={images} />
+  </article>
+);
+
+export default GalleryOther;

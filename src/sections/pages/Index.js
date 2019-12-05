@@ -1,6 +1,6 @@
-import React, { useState } from "react";
-import Carousel from "react-bootstrap/Carousel";
-
+import React from "react";
+import Carousel from "react-multi-carousel";
+import "react-multi-carousel/lib/styles.css";
 import folk from "../../img/portfolio/Patti Adams - me folk.jpg";
 import thorgal from "../../img/portfolio/Patti Adams - thorgal.jpg";
 import still from "../../img/portfolio/Patti Adams - very still.jpg";
@@ -25,38 +25,30 @@ const images = [
     number: 1
   }
 ];
+const responsive = {
+  all: {
+    breakpoint: { max: 4000, min: 0 },
+    items: 1
+  }
+};
 
-export default function Index() {
-  const [index, setIndex] = useState(0);
-  const [direction, setDirection] = useState(null);
+const MainPage = () => (
+  <section className="max-w-2xl mx-auto mt-12">
+    <Carousel responsive={responsive} infinite={true}>
+      {images.map(image => {
+        return (
+          <div key={image.title}>
+            <img
+              className="d-block w-full h-64 sm:h-screen object-cover"
+              src={image.src}
+              alt="Me folk"
+            />
+            <p className="text-center">{image.description}</p>
+          </div>
+        );
+      })}
+    </Carousel>
+  </section>
+);
 
-  const handleSelect = (selectedIndex, e) => {
-    setIndex(selectedIndex);
-    setDirection(e.direction);
-  };
-  return (
-    <div className="max-w-2xl mx-auto">
-      <Carousel
-        activeIndex={index}
-        direction={direction}
-        onSelect={handleSelect}
-        fade={true}
-        indicators={false}
-        interval={2000}
-        className="my-10 mx-4"
-      >
-        {images.map(image => {
-          return (
-            <Carousel.Item key={image.title}>
-              <img
-                className="d-block w-full h-64 sm:h-screen object-cover"
-                src={image.src}
-                alt="Me folk"
-              />
-            </Carousel.Item>
-          );
-        })}
-      </Carousel>
-    </div>
-  );
-}
+export default MainPage;

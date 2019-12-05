@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-import "../styles/header.css";
 import { withStyles } from "@material-ui/core";
+import "../styles/header.css";
 
 const styles = {
   transition: {
